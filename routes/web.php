@@ -18,12 +18,31 @@ Route::get('/', function () {
 });
 
 Route::get("about", function () {
+    // send data string
     $name="FahRaksiam";
     $date= "13 มีนาคม 2567";
     return view('about', compact('name','date'));
 })->name('about');
 
 Route::get("blog", function () {
+    // send data array
+    $blog = [
+        [
+            "title" => "บทความที่ 1",
+            "content" => "เนื้อหาบทความที่ 1",
+            "status" => true
+        ],
+        [
+            "title" => "บทความที่ 2",
+            "content" => "เนื้อหาบทความที่ 2",
+            "status" => false
+        ],
+        [
+            "title" => "บทความที่ 3",
+            "content" => "เนื้อหาบทความที่ 3",
+            "status" => true
+        ],
+    ];
     return view('blog');
 })->name('blog');
 
