@@ -18,12 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get("about", function () {
-    return view('about');
-});
+    $name="FahRaksiam";
+    $date= "13 มีนาคม 2567";
+    return view('about', compact('name','date'));
+})->name('about');
 
 Route::get("blog", function () {
     return view('blog');
-});
+})->name('blog');
 
 
 
